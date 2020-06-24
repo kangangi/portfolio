@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="sidenav">
+    <h1>DK</h1>
+    <a href="#skills">Skills </a>
+    <a href="#projects">Projects </a>
+    <a href="#contacts">Contacts </a>
+
+</div>
+<div class="container-fluid main">
+    <div id="intro">
+        <h1>Hello, I am <span id="name"> Diana Kangangi</span></h1>
+        <h2><span id="rank"> Full-stack junior developer.</span></h2>
+    </div>
+    <div id="intro" class="row">
+        <div class="col-md-8">
+            <h1 id="about">About Me </h1>
+            <hr>
+
+            <p>{{profile.bio}}</p>
+        </div>
+        <div class=col-md-4>
+            <img style="width:300px; height:300px;object-fit: cover;border-radius: 50%;" src="{{profile.picture.url}}"
+                alt="">
+        </div>
+    </div>
+
+    <div id="skills">
+        <h1 class="text-center">My Skills </h1>
+        <hr>
+        <div id="skill-list">
+            {%for language in languages%}
+            <div class="col-xs-3 col-md-2 col-sm-3 col-lg-2">
+                <img style="width:120px; height:120px;object-fit: cover;border-radius: 50%; padding: 15px;"
+                    src="{{language.image.url}}" alt="">
+                <p class="text-center">{{language.name | upper}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="projects">
+
+        <h1 class="text-center" id="about">My Projects</h1>
+        <hr>
+        <p class="text-center" style="font-weight: lighter; font-size: 20px;">These are some of the projects I have
+            worked on </p>
+        <div id="project-list">
+            {% for project in projects %}
+            <div class="card" style="width:700px;display: flex;
+    margin: 0 auto;">
+
+                <div style="font-size:25px; background-color: #ffe4e1; text-align: center;" class="card-header">
+                    {{project.title | upper}}
+                </div>
+                <img class="card-img-top" style="width:700px; height:350px;object-fit: cover"
+                    src="{{project.image.url}}" alt="">
+                <div class="card-body">
+
+                    <p id= "details" class="card-text">{{project.description}}
+                        <br><a style ="font-weight: lighter;"href="{{project.link}}"> View site</a></p>
+                    <p id= "details" class="card-text">Technologies used:</p>
+
+                    <div id="skill-list">
+                        <p></p>
+                        {%for i in project.languages.all%}
+                        <div class="col-xs-6 col-md-3 col-sm-6 col-lg-3">
+                            <p style="font-weight: lighter; background-color: #f0f5f5; text-align: center;">{{i}}</p>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    
+
+                </div>
+
+
+            </div>
+            <br><br>
+            {% endfor %}
+        </div>
+        <div id="contacts">
+            <h1 class="text-center" id="about">Contact Me</h1>
+            <hr>
+            <p>Email: {{profile.email}}</p>
+            <p> Github: <a href="{{profile.github}}">{{profile.github}}</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/diana-kangangi-749989150/"> Diana Kangangi</a></p>
+        </div>
+    </div>
+    {% endblock %}
