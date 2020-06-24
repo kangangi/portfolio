@@ -1,0 +1,120 @@
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffe4e1;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    font-family: 'Solway', serif;
+    font-size: 22px;
+    color: black;
+    display: block;
+    text-align: center;
+  }
+
+.sidenav h1{
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 50px;
+  font-size: 70px;
+  color:black;
+  display: block;
+  font-family: 'Philosopher', sans-serif;
+}
+.sidenav p{
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+  
+.sidenav a:hover {
+    color: gray;
+  }
+  
+.main {
+    margin-left:20%;
+    width: 80%;
+    float: right;
+  }
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+#intro{
+  padding: 50px;
+  
+  text-align: center;
+  font-family: 'Solway', serif;
+}
+
+#name{
+  font-family: 'Philosopher', sans-serif;
+  font-size: 50px;
+}
+
+#rank{
+  font-family: 'Solway', serif;;
+  font-size: 40px;
+  
+}
+
+#intro p{
+  font-size: 18px;
+}
+#skills{
+  padding:60px;
+  font-family: 'Solway', serif;
+  font-weight: bold;
+  }
+#skills  h1{
+  font-family: 'Solway', serif;
+  font-size: 50px;
+  padding-bottom: 30px;
+  font-weight: bold;
+
+}
+
+#skill-list{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#about{
+  font-family: 'Solway', serif;
+  font-size: 50px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#projects{
+  font-family: 'Solway', serif;
+  font-weight: bold;
+  padding: 60px;
+  text-align: center;
+}
+
+
+#contacts{
+  background-color: #f0f5f5;
+  padding: 60px;
+  font-size: 22px;
+  text-align: center;
+  font-weight: lighter;
+
+}
+
+#details{
+  font-size: 20px;
+}
